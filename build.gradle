@@ -110,15 +110,6 @@ task adServiceClient(type: CreateStartScripts) {
              ["-agentpath:/opt/cprof/profiler_java_agent.so=-cprof_service=adserviceclient,-cprof_service_version=1.0.0"]
 }
 
-import com.github.sherter.googlejavaformatgradleplugin.GoogleJavaFormat
-import com.github.sherter.googlejavaformatgradleplugin.VerifyGoogleJavaFormat
-
-task format(type: GoogleJavaFormat) {
-  source 'src/main'
-  source 'src/test'
-  include '**/*.java'
-  exclude '**/*Template.java'
-}
 
 task verifyFormatting(type: VerifyGoogleJavaFormat) {
   source 'src/main'
