@@ -110,13 +110,6 @@ task adServiceClient(type: CreateStartScripts) {
              ["-agentpath:/opt/cprof/profiler_java_agent.so=-cprof_service=adserviceclient,-cprof_service_version=1.0.0"]
 }
 
-
-task verifyFormatting(type: VerifyGoogleJavaFormat) {
-  source 'src/main'
-  include '**/*.java'
-  ignoreFailures true
-}
-
 applicationDistribution.into('bin') {
     from(adService)
     from(adServiceClient)
